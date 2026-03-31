@@ -1,0 +1,128 @@
+/* HEADER */
+header {
+    background: #fff;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.user a {
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* QUIZ */
+.quiz {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+/* CARD */
+.container-form {
+    background: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* QUESTÕES */
+.q {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+/* TEXTO DAS PERGUNTAS */
+.q p {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* OPÇÕES (ALINHADAS) */
+.q label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    margin: 8px 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+/* HOVER */
+.q label:hover {
+    background: #f0f0f0;
+}
+
+/* INPUTS */
+input[type="radio"],
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* SELECT */
+select {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÃO */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    border: none;
+    background: #3483fa;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2968c8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .container-form {
+        padding: 25px;
+    }
+
+    .q p {
+        font-size: 18px;
+    }
+
+    .q label {
+        font-size: 16px;
+    }
+}

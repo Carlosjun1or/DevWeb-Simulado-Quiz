@@ -8,24 +8,29 @@ if (!isset($_SESSION['email'])) {
 $user = $_SESSION['name'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 
 <body>
-    <header>
 
+    <header>
         <nav>
             <div class="logo">
-                <a href="dashboard.php"><img src="img/logo.png" alt="Logo"></a>
+                <a href="dashboard.php">
+                    <img src="img/logo.png" alt="Logo">
+                </a>
             </div>
+
             <div class="user">
-                <?php echo "olá! " . $user; ?>
+                <p>Olá,<strong> <?php echo $user; ?> </strong> </p>
                 <a href="../model/logout.php">Sair</a>
             </div>
         </nav>
@@ -35,149 +40,189 @@ $user = $_SESSION['name'];
         <section class="quiz">
             <div class="container-form">
 
-                <form action="#">
+                <form action="#" method="POST">
+
+                    <!-- 1 -->
                     <div class="q">
-                        <label><strong>1.O comando echo é utilizado para: </strong></label><br>
-                        <input type="radio" name="q1" value="a">Receber dados<br>
-                        <input type="radio" name="q1" value="b">Exibir dados<br>
-                        <input type="radio" name="q1" value="c">Criar funções<br>
-                        <input type="radio" name="q1" value="d">Encerrar o codigo<br><br>
+                        <p><strong>1. O comando echo é utilizado para:</strong></p>
+                        <label><input type="radio" name="q1" value="a" required> Receber dados</label>
+                        <label><input type="radio" name="q1" value="b"> Exibir dados</label>
+                        <label><input type="radio" name="q1" value="c"> Criar funções</label>
+                        <label><input type="radio" name="q1" value="d"> Encerrar código</label>
                     </div>
+
+                    <!-- 2 -->
                     <div class="q">
-                        <label><strong>2.Em PHP, uma variável começa com: </strong></label><br>
-                        <input type="radio" name="q2" value="a">#<br>
-                        <input type="radio" name="q2" value="b">$<br>
-                        <input type="radio" name="q2" value="c">@<br>
-                        <input type="radio" name="q2" value="d">&<br><br>
+                        <p><strong>2. Em PHP, uma variável começa com:</strong></p>
+                        <label><input type="radio" name="q2" value="a" required> #</label>
+                        <label><input type="radio" name="q2" value="b"> $</label>
+                        <label><input type="radio" name="q2" value="c"> @</label>
+                        <label><input type="radio" name="q2" value="d"> &</label>
                     </div>
+
+                    <!-- 3 -->
                     <div class="q">
-                        <label><strong>3. Qual é uma variável válida? </strong></label><br>
-                        <input type="radio" name="q3" value="a">$1nome<br>
-                        <input type="radio" name="q3" value="b">$nome_usuario<br>
-                        <input type="radio" name="q3" value="c">nome$<br>
-                        <input type="radio" name="q3" value="d">$nome-usuario<br><br>
+                        <p><strong>3. Qual é uma variável válida?</strong></p>
+                        <label><input type="radio" name="q3" value="a" required> $1nome</label>
+                        <label><input type="radio" name="q3" value="b"> $nome_usuario</label>
+                        <label><input type="radio" name="q3" value="c"> nome$</label>
+                        <label><input type="radio" name="q3" value="d"> $nome-usuario</label>
                     </div>
+
+                    <!-- 4 -->
                     <div class="q">
-                        <label><strong>4.Qual método envia os dados pela URL: </strong></label>
-                        <select name="q4">
+                        <p><strong>4. Qual método envia dados pela URL?</strong></p>
+                        <select name="q4" required>
                             <option value="a">POST</option>
                             <option value="b">GET</option>
                         </select>
-                        <br><br>
                     </div>
+
+                    <!-- 5 -->
                     <div class="q">
-                        <label><strong>5.Sobre o método POST (marque as corretas):</strong></label><br>
-                        <input type="checkbox" name="q5[]" value="a">Dados ficam visíveis na URL<br>
-                        <input type="checkbox" name="q5[]" value="b">Mais seguro para envio de dados<br>
-                        <input type="checkbox" name="q5[]" value="c">Permite envio de grande volume de dados<br>
-                        <input type="checkbox" name="q5[]" value="d">Só funciona com textos<br><br>
+                        <p><strong>5. Sobre o método POST:</strong></p>
+                        <label><input type="checkbox" name="q5[]" value="a" required> Dados visíveis na URL</label>
+                        <label><input type="checkbox" name="q5[]" value="b"> Mais seguro</label>
+                        <label><input type="checkbox" name="q5[]" value="c"> Permite muitos dados</label>
+                        <label><input type="checkbox" name="q5[]" value="d"> Só funciona com texto</label>
                     </div>
+
+                    <!-- 6 -->
                     <div class="q">
-                        <label><strong>6. Qual input é mais adequado para senha? </strong></label><br>
-                        <input type="radio" name="q6" value="a">text<br>
-                        <input type="radio" name="q6" value="b">email<br>
-                        <input type="radio" name="q6" value="c">password<br><br>
+                        <p><strong>6. Qual input é mais adequado para senha?</strong></p>
+                        <label><input type="radio" name="q6" value="a" required> text</label>
+                        <label><input type="radio" name="q6" value="b"> email</label>
+                        <label><input type="radio" name="q6" value="c"> password</label>
                     </div>
+
+                    <!-- 7 -->
                     <div class="q">
-                        <label><strong>7.Qual permite escolher apenas UMA opção? </strong></label><br>
-                        <input type="radio" name="q7" value="a">checkbox<br>
-                        <input type="radio" name="q7" value="b">radio<br>
-                        <input type="radio" name="q7" value="c">text<br>
-                        <input type="radio" name="q7" value="d">textarea<br><br>
+                        <p><strong>7. Qual permite escolher apenas UMA opção?</strong></p>
+                        <label><input type="radio" name="q7" value="a" required> checkbox</label>
+                        <label><input type="radio" name="q7" value="b"> radio</label>
+                        <label><input type="radio" name="q7" value="c"> text</label>
+                        <label><input type="radio" name="q7" value="d"> textarea</label>
                     </div>
+
+                    <!-- 8 -->
                     <div class="q">
-                        <label><strong>8.Checkbox é usado quando: </strong></label>
-                        <select name="q8">
+                        <p><strong>8. Checkbox é usado quando:</strong></p>
+                        <select name="q8" required>
                             <option value="a">Apenas uma opção</option>
                             <option value="b">Múltiplas opções</option>
                         </select>
-                        <br><br>
                     </div>
+
+                    <!-- 9 -->
                     <div class="q">
-                        <label><strong>9.A tag < select> serve para:</select>" </strong></label><br>
-                        <input type="radio" name="q9" value="a">Campos de texto<br>
-                        <input type="radio" name="q9" value="b">Lista suspensa<br>
-                        <input type="radio" name="q9" value="c">Botão<br>
-                        <input type="radio" name="q9" value="d">sessão<br><br>
+                        <p><strong>9. A tag &lt;select&gt; serve para:</strong></p>
+                        <label><input type="radio" name="q9" value="a" required> Campos de texto</label>
+                        <label><input type="radio" name="q9" value="b"> Lista suspensa</label>
+                        <label><input type="radio" name="q9" value="c"> Botão</label>
+                        <label><input type="radio" name="q9" value="d"> Sessão</label>
                     </div>
+
+                    <!-- 10 -->
                     <div class="q">
-                        <label><strong>10.Qual estrutura usamos para decisão? </strong></label><br>
-                        <input type="radio" name="q10" value="a">for<br>
-                        <input type="radio" name="q10" value="b">echo<br>
-                        <input type="radio" name="q10" value="c">if<br>
-                        <input type="radio" name="q10" value="d">array<br><br>
+                        <p><strong>10. Qual estrutura usamos para decisão?</strong></p>
+                        <label><input type="radio" name="q10" value="a" required> for</label>
+                        <label><input type="radio" name="q10" value="b"> echo</label>
+                        <label><input type="radio" name="q10" value="c"> if</label>
+                        <label><input type="radio" name="q10" value="d"> array</label>
                     </div>
+
+                    <!-- 11 -->
                     <div class="q">
-                        <label><strong>11.Qual estrutura usamos para repetição? </strong></label><br>
-                        <input type="radio" name="q11" value="a">if<br>
-                        <input type="radio" name="q11" value="b">echo<br>
-                        <input type="radio" name="q11" value="c">for<br>
-                        <input type="radio" name="q11" value="d">isset<br><br>
+                        <p><strong>11. Qual estrutura usamos para repetição?</strong></p>
+                        <label><input type="radio" name="q11" value="a" required> if</label>
+                        <label><input type="radio" name="q11" value="b"> echo</label>
+                        <label><input type="radio" name="q11" value="c"> for</label>
+                        <label><input type="radio" name="q11" value="d"> isset</label>
                     </div>
+
+                    <!-- 12 -->
                     <div class="q">
-                        <label><strong>12.Um array é: </strong></label><br>
-                        <input type="radio" name="q12" value="a">Uma função<br>
-                        <input type="radio" name="q12" value="b">Uma variável com multiplos valores<br>
-                        <input type="radio" name="q12" value="c">Um formulário<br>
-                        <input type="radio" name="q12" value="d">Um loop<br><br>
+                        <p><strong>12. Um array é:</strong></p>
+                        <label><input type="radio" name="q12" value="a" required> Uma função</label>
+                        <label><input type="radio" name="q12" value="b"> Uma variável com múltiplos valores</label>
+                        <label><input type="radio" name="q12" value="c"> Um formulário</label>
+                        <label><input type="radio" name="q12" value="d"> Um loop</label>
                     </div>
+
+                    <!-- 13 -->
                     <div class="q">
-                        <label><strong>13.Para criar uma função usamos: </strong></label><br>
-                        <input type="radio" name="q13" value="a">create<br>
-                        <input type="radio" name="q13" value="b">function<br>
-                        <input type="radio" name="q13" value="c">delf<br>
-                        <input type="radio" name="q13" value="d">func<br><br>
+                        <p><strong>13. Para criar uma função usamos:</strong></p>
+                        <label><input type="radio" name="q13" value="a" required> create</label>
+                        <label><input type="radio" name="q13" value="b"> function</label>
+                        <label><input type="radio" name="q13" value="c"> delf</label>
+                        <label><input type="radio" name="q13" value="d"> func</label>
                     </div>
+
+                    <!-- 14 -->
                     <div class="q">
-                        <label><strong>14.Sessões servem para: </strong></label><br>
-                        <input type="radio" name="q14" value="a">Armazenar no navegador<br>
-                        <input type="radio" name="q14" value="b">Armazenar no servidor<br>
-                        <input type="radio" name="q14" value="c">criar HTML<br>
-                        <input type="radio" name="q14" value="d">Fazer requisições<br><br>
+                        <p><strong>14. Sessões servem para:</strong></p>
+                        <label><input type="radio" name="q14" value="a" required> Armazenar no navegador</label>
+                        <label><input type="radio" name="q14" value="b"> Armazenar no servidor</label>
+                        <label><input type="radio" name="q14" value="c"> Criar HTML</label>
+                        <label><input type="radio" name="q14" value="d"> Fazer requisições</label>
                     </div>
+
+                    <!-- 15 -->
                     <div class="q">
-                        <label><strong>15. Cookies são armazenados: </strong></label>
-                        <select name="q15">
+                        <p><strong>15. Cookies são armazenados:</strong></p>
+                        <select name="q15" required>
                             <option value="a">No servidor</option>
                             <option value="b">No navegador</option>
                         </select>
-                        <br><br>
                     </div>
+
+                    <!-- 16 -->
                     <div class="q">
-                        <label><strong>16.Qual função pode consumir API? </strong></label><br>
-                        <input type="radio" name="q16" value="a">echo<br>
-                        <input type="radio" name="q16" value="b">file_get_contents<br>
-                        <input type="radio" name="q16" value="c">isset<br>
-                        <input type="radio" name="q16" value="d">print_r<br><br>
+                        <p><strong>16. Qual função pode consumir API?</strong></p>
+                        <label><input type="radio" name="q16" value="a" required> echo</label>
+                        <label><input type="radio" name="q16" value="b"> file_get_contents</label>
+                        <label><input type="radio" name="q16" value="c"> isset</label>
+                        <label><input type="radio" name="q16" value="d"> print_r</label>
                     </div>
+
+                    <!-- 17 -->
                     <div class="q">
-                        <label><strong>17.Sobre cURL (marque as corretas):</strong></label><br>
-                        <input type="checkbox" name="q17[]" value="a">Faz requisições HTTP<br>
-                        <input type="checkbox" name="q17[]" value="b">Consome APIs<br>
-                        <input type="checkbox" name="q17[]" value="c">Apenas imprime dados<br>
-                        <input type="checkbox" name="q17[]" value="d">Substitui sessão<br><br>
+                        <p><strong>17. Sobre cURL:</strong></p>
+                        <label><input type="checkbox" name="q17[]" value="a" required> Faz requisições HTTP</label>
+                        <label><input type="checkbox" name="q17[]" value="b"> Consome APIs</label>
+                        <label><input type="checkbox" name="q17[]" value="c"> Apenas imprime dados</label>
+                        <label><input type="checkbox" name="q17[]" value="d"> Substitui sessão</label>
                     </div>
+
+                    <!-- 18 -->
                     <div class="q">
-                        <label><strong>18.Para acessar dados via POST usamos: </strong></label><br>
-                        <input type="radio" name="q18" value="a">$_GET<br>
-                        <input type="radio" name="q18" value="b">$_POST<br>
-                        <input type="radio" name="q18" value="c">$_SESSION<br>
-                        <input type="radio" name="q18" value="d">$_COOKIE<br><br>
+                        <p><strong>18. Para acessar dados via POST usamos:</strong></p>
+                        <label><input type="radio" name="q18" value="a" required> $_GET</label>
+                        <label><input type="radio" name="q18" value="b"> $_POST</label>
+                        <label><input type="radio" name="q18" value="c"> $_SESSION</label>
+                        <label><input type="radio" name="q18" value="d"> $_COOKIE</label>
                     </div>
+
+                    <!-- 19 -->
                     <div class="q">
-                        <label><strong>19.Para verificar se a variável existe: </strong></label><br>
-                        <input type="radio" name="q19" value="a">check()<br>
-                        <input type="radio" name="q19" value="b">isset()<br>
-                        <input type="radio" name="q19" value="c">exist()<br>
-                        <input type="radio" name="q19" value="d">verify()<br><br>
+                        <p><strong>19. Para verificar se variável existe:</strong></p>
+                        <label><input type="radio" name="q19" value="a" required> check()</label>
+                        <label><input type="radio" name="q19" value="b"> isset()</label>
+                        <label><input type="radio" name="q19" value="c"> exist()</label>
+                        <label><input type="radio" name="q19" value="d"> verify()</label>
                     </div>
+
+                    <!-- 20 -->
                     <div class="q">
-                        <label><strong>20.Para iniciar uma sessão usamos: </strong></label><br>
-                        <input type="radio" name="q20" value="a">start_session()<br>
-                        <input type="radio" name="q20" value="b">session_strat()<br>
-                        <input type="radio" name="q20" value="c">init_session()<br>
-                        <input type="radio" name="q20" value="d">begin_seeion()<br><br>
+                        <p><strong>20. Para iniciar sessão usamos:</strong></p>
+                        <label><input type="radio" name="q20" value="a" required> start_session()</label>
+                        <label><input type="radio" name="q20" value="b"> session_start()</label>
+                        <label><input type="radio" name="q20" value="c"> init_session()</label>
+                        <label><input type="radio" name="q20" value="d"> begin_session()</label>
                     </div>
+
+                    <button type="submit">Finalizar Quiz</button>
+
                 </form>
 
             </div>
