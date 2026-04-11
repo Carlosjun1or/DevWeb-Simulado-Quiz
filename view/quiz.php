@@ -183,7 +183,5 @@ $user = $_SESSION['name'];
             </div>
         </section>
     </main>
-
 </body>
-
 </html>
