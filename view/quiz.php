@@ -8,13 +8,14 @@ if (!isset($_SESSION['email'])) {
 $user = $_SESSION['name'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 
 <body>
@@ -22,7 +23,7 @@ $user = $_SESSION['name'];
 
         <nav>
             <div class="logo">
-                <a href="dashboard.php"><img src="img/logo.png" alt="Logo"></a>
+                <a href="quiz.php"><img src="img/logo.png" alt="Logo"></a>
             </div>
             <div class="user">
                 <?php echo "olá! " . $user; ?>
@@ -35,7 +36,7 @@ $user = $_SESSION['name'];
         <section class="quiz">
             <div class="container-form">
 
-                <form action="#">
+                <form action="resultados.php" method="POST">
                     <div class="q">
                         <label><strong>1.O comando echo é utilizado para: </strong></label><br>
                         <input type="radio" name="q1" value="a">Receber dados<br>
@@ -178,8 +179,8 @@ $user = $_SESSION['name'];
                         <input type="radio" name="q20" value="c">init_session()<br>
                         <input type="radio" name="q20" value="d">begin_seeion()<br><br>
                     </div>
+                    <button type="submit">Finalizar Quiz</button>
                 </form>
-
             </div>
         </section>
     </main>

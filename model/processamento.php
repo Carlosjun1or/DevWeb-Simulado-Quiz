@@ -1,11 +1,4 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['email'])) {
-    header('Location: ../view/login.php');
-    exit();
-}
-$user = $_SESSION['name'];
 
 $gabarito = [
     "q1" => "b",
@@ -48,13 +41,14 @@ for ($i = 1; $i <= 20; $i++) {
         }
     }
 }
-
-if($pontuacao <= 10){
-    echo "Sua pontuação é: " . $pontuacao . ". Você precisa revisar os conteúdos e tentar novamente.";
-}elseif($pontuacao <= 17){
-    echo "Sua pontuação é: " . $pontuacao . ". Bom resultado! Continue praticando para melhorar ainda mais.";
-} else {
-    echo "Sua pontuação é: " . $pontuacao . ". Parabéns! Você demonstrou excelente domínio do conteúdo.";
+// Função de feedback
+function resultado($pontuacao){
+    if($pontuacao <= 10){
+    return "Sua pontuação é: " . $pontuacao . ". Você precisa revisar os conteúdos e tentar novamente.";
+    }elseif($pontuacao <= 17){
+        return "Sua pontuação é: " . $pontuacao . ". Bom resultado! Continue praticando para melhorar ainda mais.";
+    } else {
+        return "Sua pontuação é: " . $pontuacao . ". Parabéns! Você demonstrou excelente domínio do conteúdo.";
+    }
 }
-
 ?>
