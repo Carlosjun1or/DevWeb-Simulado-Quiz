@@ -1,89 +1,156 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+:root {
+    --amarelo:        #FFD60A;
+    --amarelo-claro:  #FFF3B0;
+    --amarelo-hover:  #FFC300;
+    --laranja:        #FF6B00;
+    --laranja-escuro: #E05A00;
+    --laranja-suave:  #FFF0E5;
+    --branco:         #FFFFFF;
+    --cinza-claro:    #F8F8F8;
+    --cinza-borda:    #E0E0E0;
+    --texto-escuro:   #1A1A1A;
+    --texto-medio:    #444444;
+    --sombra-suave:   0 2px 8px rgba(0,0,0,0.08);
+    --sombra-card:    0 4px 16px rgba(255,107,0,0.12);
+    --radius:         10px;
+    --radius-lg:      16px;
+}
+
+/* ── BODY ── */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-claro);
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(255,214,10,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, rgba(255,107,0,0.12) 0%, transparent 50%);
+    min-height: 100vh;
+    color: var(--texto-escuro);
+}
 /* ===========================
    LOGIN
    =========================== */
-
+main {
+    margin: 2.5rem auto;
+    padding: 0 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .login {
-    padding: 100px 20px; /* 🔥 evita overflow lateral */
-    text-align: center;
-    min-height: calc(100vh - 180px);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.25rem;
 }
 
 .login-container {
-    margin: 0 auto;
-    background-color: white;
-    padding: 50px;
-    max-width: 500px; /* 🔥 controla melhor */
-    width: 100%; /* 🔥 importante */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--branco);
+    padding: 2.5rem 2rem;
+    min-width: 500px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--sombra-card);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login h2 {
-    color: black;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--laranja);
+    margin-bottom: 0.25rem;
 }
 
 .login span {
-    color: #ffc72c;
+    color: var(--amarelo);
 }
-
 
 /* FORM */
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 1.5rem;
+    width: 100%;
 }
 
 .login-form input {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 13px 15px;
+    border: 1.5px solid var(--cinza-borda);
+    border-radius: var(--radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--texto-escuro);
+    background: var(--cinza-claro);
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.12);
+    background: var(--branco);
 }
 
 .login-form input[type="checkbox"] {
     width: auto;
-    margin: 0;
     padding: 0;
-}
-
-.login-form input:focus {
-    border-color: #007bff;
+    margin: 0;
 }
 
 .checkbox-container {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 6px;
+    margin-bottom: 4px;
 }
 
 .login-form label {
-    font-size: 14px;
-    color: #333;
+    font-size: 0.85rem;
+    color: var(--texto-medio);
 }
 
-.login-form button {
+/* reutiliza o botão global do resultado.css */
+/* ── BOTÃO ── */
+.login button{
+    display: block;
     width: 100%;
-    background: #3483FA;
-    padding: 12px;
+    margin-top: 2rem;
+    padding: 15px 2rem;
+    background: linear-gradient(135deg, var(--amarelo) 0%, var(--laranja) 100%);
+    color: var(--texto-escuro);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
     border: none;
-    border-radius: 6px;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
+    border-radius: var(--radius);
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+    box-shadow: 0 4px 14px rgba(255,107,0,0.35);
 }
 
-.login-form button:hover {
-    background: #2968c8;
+.login button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,0,0.45);
+    filter: brightness(1.04);
 }
 
 
@@ -91,73 +158,46 @@
    RESPONSIVO
    =========================== */
 
-/* TABLET */
 @media (max-width: 1024px) {
-
-    .login {
-        padding: 60px 20px;
+    .login-container {
+        min-width: 0px;
+        max-width: 640px;
+        padding: 2rem;
     }
 
     .login h2 {
-        font-size: 32px;
-    }
-
-    .login-container {
-        max-width: 450px;
-        padding: 40px;
+        font-size: 1.6rem;
     }
 }
 
-
-/* TABLET MENOR */
 @media (max-width: 768px) {
-
     .login-container {
-        max-width: 400px;
-    }
-
-    .login-form input {
-        padding: 12px;
-    }
-
-    .login-form button {
-        font-size: 15px;
+        min-width: 0;
+        max-width: 540px;
     }
 }
 
-
-/* MOBILE */
 @media (max-width: 576px) {
-
     .login {
-        padding: 40px 10px;
+        
+        padding: 1.5rem 1rem;
+        align-items: center;
+        padding-top: 2.5rem;
     }
 
     .login-container {
+        min-width: none;
         max-width: 100%;
-        padding: 30px 20px;
+        padding: 2rem 1.25rem;
     }
 
     .login h2 {
-        font-size: 26px;
-    }
-
-    .login-form input {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    .login-form button {
-        padding: 10px;
-        font-size: 14px;
+        font-size: 1.4rem;
     }
 }
 
-
-/* MOBILE PEQUENO */
 @media (max-width: 400px) {
-
     .login h2 {
-        font-size: 22px;
+        font-size: 1.2rem;
     }
 }

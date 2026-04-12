@@ -219,10 +219,6 @@ button[type="submit"]:active {
     box-shadow: 0 2px 8px rgba(255,107,0,0.3);
 }
 
-/* ── CONTADOR VISUAL (opcional) ── */
-form {
-    counter-reset: questao;
-}
 
 /* ── RESPONSIVIDADE ── */
 @media (max-width: 640px) {
