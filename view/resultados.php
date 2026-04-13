@@ -5,10 +5,14 @@ if (!isset($_SESSION['email'])) {
     header('Location: ../view/login.php');
     exit();
 }
+
 $user = $_SESSION['name'];
+
+include '../model/api.php';
+$motivacao = buscarFraseMotivacional();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +24,6 @@ $user = $_SESSION['name'];
 
 <body>
     <header>
-
         <nav>
             <div class="logo">
                 <a href="quiz.php"><img src="img/logo.png" alt="Logo"></a>
@@ -41,9 +44,15 @@ $user = $_SESSION['name'];
                     echo resultado($pontuacao);
                     ?>
                 </div>
+                <div class="motivacao">
+                    <span>💡</span>
+                    <p>"<?php echo htmlspecialchars($motivacao['frase']); ?>"</p>
+                    <small>— <?php echo htmlspecialchars($motivacao['autor']); ?></small>
+                </div>
                 <button onclick="window.location.href='quiz.php'">Refazer Quiz</button>
-            </div>  
+            </div>
         </section>
+    </main>
 </body>
 
 </html>
