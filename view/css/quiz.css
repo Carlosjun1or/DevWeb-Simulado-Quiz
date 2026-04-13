@@ -11,21 +11,21 @@
 }
 
 :root {
-    --amarelo:        #FFD60A;
-    --amarelo-claro:  #FFF3B0;
-    --amarelo-hover:  #FFC300;
-    --laranja:        #FF6B00;
+    --amarelo: #FFD60A;
+    --amarelo-claro: #FFF3B0;
+    --amarelo-hover: #FFC300;
+    --laranja: #FF6B00;
     --laranja-escuro: #E05A00;
-    --laranja-suave:  #FFF0E5;
-    --branco:         #FFFFFF;
-    --cinza-claro:    #F8F8F8;
-    --cinza-borda:    #E0E0E0;
-    --texto-escuro:   #1A1A1A;
-    --texto-medio:    #444444;
-    --sombra-suave:   0 2px 8px rgba(0,0,0,0.08);
-    --sombra-card:    0 4px 16px rgba(255,107,0,0.12);
-    --radius:         10px;
-    --radius-lg:      16px;
+    --laranja-suave: #FFF0E5;
+    --branco: #FFFFFF;
+    --cinza-claro: #F8F8F8;
+    --cinza-borda: #E0E0E0;
+    --texto-escuro: #1A1A1A;
+    --texto-medio: #444444;
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --sombra-card: 0 4px 16px rgba(255, 107, 0, 0.12);
+    --radius: 10px;
+    --radius-lg: 16px;
 }
 
 /* ── BODY ── */
@@ -33,8 +33,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--cinza-claro);
     background-image:
-        radial-gradient(circle at 20% 10%, rgba(255,214,10,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 90%, rgba(255,107,0,0.12) 0%, transparent 50%);
+        radial-gradient(circle at 20% 10%, rgba(255, 214, 10, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, rgba(255, 107, 0, 0.12) 0%, transparent 50%);
     min-height: 100vh;
     color: var(--texto-escuro);
 }
@@ -46,7 +46,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 3px 12px rgba(255,107,0,0.4);
+    box-shadow: 0 3px 12px rgba(255, 107, 0, 0.4);
 }
 
 nav {
@@ -84,7 +84,7 @@ nav {
 .user a {
     color: var(--branco);
     text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.6);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
     padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -119,10 +119,18 @@ main {
 .quiz::after {
     content: "Responda todas as questões e clique em Finalizar";
     display: block;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     color: var(--texto-medio);
     text-align: center;
     margin-bottom: 2.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 10px;
+    background: var(--cinza-borda);
+    width: fit-content;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ── CARD CONTAINER ── */
@@ -134,31 +142,69 @@ main {
     border: 1px solid var(--cinza-borda);
 }
 
+/* ── QUESTÃO ── */
+.q {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--cinza-borda);
+    background: var(--branco);
+    box-shadow: var(--sombra-suave);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
 
+.q:hover {
+    border-color: var(--laranja);
+    box-shadow: var(--sombra-card);
+}
 
-
-/* ── LABEL DA QUESTÃO ── */
-.q label strong {
-    display: block;
+.pergunta {
     font-family: 'Nunito', sans-serif;
-    font-size: 0.97rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--texto-escuro);
-    margin-bottom: 0.85rem;
-    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--cinza-borda);
+}
+
+.q input[type="radio"],
+.q input[type="checkbox"] {
+    accent-color: var(--laranja);
+    cursor: pointer;
 }
 
 /* ── OPÇÕES DE RESPOSTA ── */
-.q input[type="radio"], input[type="checkbox"] {
-    margin-right: 0.5rem;
-    accent-color: var(--laranja);
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 360px;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--cinza-borda);
+    margin-bottom: 0.4rem;
     cursor: pointer;
-    transition: transform 0.1s;
-;
-;
+    transition: background 0.2s, border-color 0.2s;
+    font-size: 0.9rem;
 }
-.q input[type="radio"]:hover {
-    transform: scale(1.1);
+
+.opcao:hover {
+    background: var(--laranja-suave);
+    border-color: var(--laranja);
+}
+
+.opcao:has(input:checked) {
+    background: var(--laranja-suave);
+    border-color: var(--laranja);
+    font-weight: 600;
+    color: var(--laranja-escuro);
 }
 
 /* ── SELECT ── */
@@ -186,7 +232,14 @@ main {
 .q select:focus {
     outline: none;
     border-color: var(--laranja-escuro);
-    box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.q select:has(option:checked:not([value=""])) {
+    background: var(--laranja-suave);
+    border-color: var(--laranja);
+    font-weight: 600;
+    color: var(--laranja-escuro);
 }
 
 /* ── BOTÃO FINALIZAR ── */
@@ -204,21 +257,21 @@ button[type="submit"] {
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
-    box-shadow: 0 4px 14px rgba(255,107,0,0.35);
+    box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s, letter-spacing 0.2s;
 }
 
 button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255,107,0,0.45);
-    filter: brightness(1.04);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.5);
+    letter-spacing: 1px;
 }
 
 button[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(255,107,0,0.3);
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.3);
+    letter-spacing: 0.5px;
 }
-
 
 /* ── RESPONSIVIDADE ── */
 @media (max-width: 640px) {
