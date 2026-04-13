@@ -135,9 +135,43 @@ main {
 }
 
 .resultado {
-    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.pontuacao-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.pontuacao-emoji {
+    font-size: 2.5rem;
+}
+
+.pontuacao {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--laranja);
+    line-height: 1;
+}
+
+.divisor {
+    width: 60%;
+    border: none;
+    border-top: 2px solid var(--cinza-borda);
+    margin: 0.5rem 0;
+}
+
+.msg-resultado {
+    font-size: 1rem;
     color: var(--texto-medio);
-    margin-top: 1rem;
+    text-align: center;
+    max-width: 320px;
 }
 
 /* ── FRASE MOTIVACIONAL ── */
@@ -150,11 +184,13 @@ main {
     text-align: left;
     width: 100%;
 }
+
 .motivacao p {
     font-style: italic;
     color: var(--texto-escuro);
     margin: 0.4rem 0;
 }
+
 .motivacao small {
     font-weight: 600;
     color: var(--laranja-escuro);
@@ -175,12 +211,16 @@ button {
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
     box-shadow: 0 4px 14px rgba(255, 107, 0, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.45);
-    filter: brightness(1.04);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(255,107,0,0.5);
+}
+
+button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 8px rgba(255,107,0,0.3);
 }
