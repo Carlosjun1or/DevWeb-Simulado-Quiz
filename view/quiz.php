@@ -40,7 +40,7 @@ $user = $_SESSION['name'];
         <section class="quiz">
             <div class="container-form">
 
-                <form action="#" method="POST">
+                <form action="resultados.php" method="POST">
 
                     <!-- 1 -->
                     <div class="q">
