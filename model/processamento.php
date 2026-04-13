@@ -20,7 +20,7 @@ $gabarito = [
     "q17" => ["a","b"],
     "q18" => "b",
     "q19" => "b",
-    "q20" => "a"
+    "q20" => "b"
 ];
 
 //verificação das respostas
@@ -42,13 +42,25 @@ for ($i = 1; $i <= 20; $i++) {
     }
 }
 // Função de feedback
-function resultado($pontuacao){
-    if($pontuacao <= 10){
-    return "Sua pontuação é: " . $pontuacao . ". Você precisa revisar os conteúdos e tentar novamente.";
-    }elseif($pontuacao <= 17){
-        return "Sua pontuação é: " . $pontuacao . ". Bom resultado! Continue praticando para melhorar ainda mais.";
+function resultado($pontuacao) {
+    if ($pontuacao <= 10) {
+        $emoji = "😔";
+        $msg = "Você precisa revisar os conteúdos e tentar novamente.";
+    } elseif ($pontuacao <= 17) {
+        $emoji = "🙂";
+        $msg = "Bom resultado! Continue praticando para melhorar ainda mais.";
     } else {
-        return "Sua pontuação é: " . $pontuacao . ". Parabéns! Você demonstrou excelente domínio do conteúdo.";
+        $emoji = "🏆";
+        $msg = "Parabéns! Você demonstrou excelente domínio do conteúdo.";
     }
+
+    return "
+        <div class='pontuacao-badge'>
+            <span class='pontuacao-emoji'>{$emoji}</span>
+            <span class='pontuacao'>{$pontuacao}/20</span>
+        </div>
+        <hr class='divisor'>
+        <p class='msg-resultado'>{$msg}</p>
+    ";
 }
 ?>
