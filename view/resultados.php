@@ -19,6 +19,8 @@ $motivacao = buscarFraseMotivacional();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/resultados.css">
 </head>
 

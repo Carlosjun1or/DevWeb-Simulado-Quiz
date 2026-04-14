@@ -1,0 +1,58 @@
+
+/* ── HEADER / NAV ── */
+header {
+    background-color: var(--laranja);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(255, 107, 0, 0.4);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 860px;
+    margin: 0 auto;
+    height: 64px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    transition: transform 0.2s;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user a {
+    color: var(--branco);
+    text-decoration: none;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.user a:hover {
+    background: var(--branco);
+    color: var(--laranja);
+}
