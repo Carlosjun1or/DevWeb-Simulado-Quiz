@@ -1,7 +1,7 @@
 # 🧠 DevWeb Simulado Quiz
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)</br>
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)</br>
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 Um sistema de simulado interativo desenvolvido em **PHP**, focado em proporcionar uma experiência dinâmica de aprendizado. O projeto foi concebido como uma atividade prática para a disciplina de **Desenvolvimento Web**, integrando lógica de back-end com APIs externas de tradução e citações motivacionais.
@@ -42,19 +42,19 @@ O projeto utiliza as seguintes tecnologias:
 
 ```
 /DevWeb-Simulado-Quiz
-├── index.html          # Ponto de entrada (redirecionamento)
-├── model/              # Lógica de negócio e processamento
-│   ├── api.php         # Integração com APIs externas (Tradução/Citações)
-│   ├── processamento.php # Validação do gabarito e cálculo de pontos
-│   ├── session.php      # Controle de autenticação e persistência
-│   └── logout.php       # Encerramento de sessão
-├── view/               # Camada de apresentação
-│   ├── css/            # Estilos (Global, Layout, Quiz, Resultados)
-│   ├── img/            # Ativos visuais e logotipos
-│   ├── login.php       # Interface de autenticação
-│   ├── quiz.php        # Interface do simulado
-│   └── resultados.php  # Exibição de desempenho e frases motivacionais
-└── .gitattributes      # Configurações do repositório
+├── index.html
+├── model/
+│   ├── api.php
+│   ├── processamento.php
+│   ├── session.php
+│   └── logout.php
+├── view/
+│   ├── css/
+│   ├── img/
+│   ├── login.php
+│   ├── quiz.php
+│   └── resultados.php
+└── .gitattributes
 ```
 
 </br>
